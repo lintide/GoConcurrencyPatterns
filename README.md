@@ -321,7 +321,7 @@ We can instead use a fan-in function to let whosoever is ready talk.
 [code](boring08.go)
 
 ## Fan-in ##
-![Fan-in](imgs/fan_in.png)
+![Fan-in](GoConcurrencyPatterns/blob/master/imgs/fan_in.png)
 
 ## Restoring sequencing ##
 
@@ -530,7 +530,7 @@ How do we know it's finished? Wait for it to tell us it's done: receive on the q
 [code](daisyChain.go)
 
 ## Chinese whispers, gopher style ##
-![chinese whispers](imgs/chinese_whispers.png)
+![chinese whispers](GoConcurrencyPatterns/blob/master/imgs/chinese_whispers.png)
 
 ## Systems software ##
 
