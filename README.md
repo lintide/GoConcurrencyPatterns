@@ -530,7 +530,7 @@ How do we know it's finished? Wait for it to tell us it's done: receive on the q
 [code](<daisyChain.go>)
 
 ## Chinese whispers, gopher style ##
-![chinese whispers](imgs/chinese_whispers.png?raw=true)
+![](imgs/chinese_whispers.png?raw=true)
 
 ## Systems software ##
 
