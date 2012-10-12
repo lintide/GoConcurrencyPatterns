@@ -106,7 +106,7 @@ Make the intervals between messages unpredictable (still under a second).
 		}
 	}
 
-[code](boring01.go)
+[code](<boring01.go>)
 
 ## Running it ##
 
@@ -122,7 +122,7 @@ func boring(msg string) {
 	}
 }
 </code></pre>
-[code](boring02.go)
+[code](<boring02.go>)
 
 ## Ignoring it ##
 
@@ -143,7 +143,7 @@ func main() {
 <strong>	go boring("boring!")</strong>
 }
 </code></pre>
-[code](boring03.go)
+[code](<boring03.go>)
 
 ## Ignoring it a little less ##
 
@@ -158,7 +158,7 @@ We can hang around a little, and on the way show that both main and the launched
 		fmt.Println("You're boring; I'm leaving.")
 	}
 
-[code](boring04.go)
+[code](<boring04.go>)
 
 ## Goroutines ##
 
@@ -224,7 +224,7 @@ func boring(msg string, c chan string) {
 }
 </code></pre>
 
-[code](boring05.go)
+[code](<boring05.go>)
 
 ## Synchroniztion ##
 
@@ -277,7 +277,7 @@ Channels are first-class values, just like strings or integers.
 }
 </code></pre>
 
-[code](boring06.go)
+[code](<boring06.go>)
 
 ## Channels as a handle on a service ##
 
@@ -295,7 +295,7 @@ We can have more instances of the service.
 	fmt.Println("You're both boring; I'm leaving.")
 }
 </code></pre>
-[code](boring07.go)
+[code](<boring07.go>)
 
 ## Multiplexing ##
 
@@ -318,10 +318,10 @@ We can instead use a fan-in function to let whosoever is ready talk.
 	fmt.Println("You're both boring; I'm leaving.")
 }
 </code></pre>
-[code](boring08.go)
+[code](<boring08.go>)
 
 ## Fan-in ##
-![Fan-in](GoConcurrencyPatterns/blob/master/imgs/fan_in.png)
+![Fan-in](<imgs/fan_in.png>)
 
 ## Restoring sequencing ##
 
@@ -358,7 +358,7 @@ Each speaker must wait for a go-ahead.
 	time.Sleep(time.Duration(rand.Intn(2e3)) * time.Millisecond)
 	<- waitForIt
 
-[code](boring09.go)
+[code](<boring09.go>)
 
 ## Select ##
 
@@ -418,7 +418,7 @@ Rewrite our original fanin function. Only one goroutine is needed. New:
 	return c
 }
 </code></pre>
-[code](boring10.go)
+[code](<boring10.go>)
 
 ## Timeout using select ##
 
@@ -440,7 +440,7 @@ After the interval, the channel delivers the current time, once.
 	fmt.Println("You're both boring; I'm leaving.")
 }
 </code></pre>
-[code](boring11.go)
+[code](<boring11.go>)
 
 ## Timeout for whole conversation using select ##
 
@@ -463,7 +463,7 @@ Create the timer once, outside the loop, to time out the entire conversation.
 	fmt.Println("You're both boring; I'm leaving.")
 }
 </code></pre>
-[code](boring12.go)
+[code](<boring12.go>)
 
 ## Quit channel ##
 
@@ -482,7 +482,7 @@ We can turn this around and tell Joe to stop when we're tired of listening to hi
 		return
 	}
 </code></pre>
-[code](boring13.go)
+[code](<boring13.go>)
 
 ## Receive on quit channel ##
 
@@ -505,7 +505,7 @@ How do we know it's finished? Wait for it to tell us it's done: receive on the q
 				return
 			}
 </code></pre>
-[code](boring14.go)
+[code](<boring14.go>)
 
 ## Daisy-chain ##
 
@@ -527,10 +527,10 @@ How do we know it's finished? Wait for it to tell us it's done: receive on the q
 		fmt.Println(<-leftmost)
 	}
 
-[code](daisyChain.go)
+[code](<daisyChain.go>)
 
 ## Chinese whispers, gopher style ##
-![chinese whispers](GoConcurrencyPatterns/blob/master/imgs/chinese_whispers.png)
+![chinese whispers](<imgs/chinese_whispers.png>)
 
 ## Systems software ##
 
@@ -567,7 +567,7 @@ Google invokes Web, Image, and Video searches serially, appending them to the re
 		return results
 	}
 
-[code](googleSearch01.go)
+[code](<googleSearch01.go>)
 
 ## Google Search 2.0 ##
 
@@ -588,7 +588,7 @@ No locks, No condition variables. No callbacks.
 		return
 	}
 
-[code](googleSearch02.go)
+[code](<googleSearch02.go>)
 
 ## Google Search 2.1 ##
 
@@ -614,7 +614,7 @@ Don't wait for slow servers. No locks. No condition variables. No callbacks.
 		return
 	}
 
-[code](googleSearch03.go)
+[code](<googleSearch03.go>)
 
 ## Avoid timeout ##
 
@@ -643,7 +643,7 @@ A: Replicate the servers. Send request to multiple replicas, and use the first r
 		fmt.Println(elapsed)
 	}
 
-[code](googleSearch04.go)
+[code](<googleSearch04.go>)
 
 ## Google Search 3.0 ##
 
@@ -669,7 +669,7 @@ Reduce tail latency using replicated search servers.
 		return
 	}
 
-[code](googleSearch05.go)
+[code](<googleSearch05.go>)
 
 ## And still... ##
 
